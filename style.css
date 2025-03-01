@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap"); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+html,
+body {
+  background-color: #151515;
+}
+nav {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section {
+  padding: 0 20px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+#themeSwitcher {
+  font-size: 35px;
+  transition: transform 0.3s ease-in-out;
+}
+#themeSwitcher:hover {
+  animation: rotate 1s ease-in infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.search-form {
+  width: clamp(280px, 90vw, 500px);
+  height: 50px;
+  display: flex;
+}
+.search-form input,
+.search-form button {
+  flex-basis: 70%;
+  background-color: #0b0b0b;
+  outline: none;
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+.search-form button {
+  flex-basis: 30%;
+  border-left: 1px solid #2a2a2a;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: 200ms ease-in-out background-color;
+}
+.search-form button:hover {
+  background-color: #050505;
+}
+.search-form button:active {
+  transform: scale(0.93);
+}
+
+.card {
+  width: clamp(280px, 90vw, 500px);
+  background-color: #0b0b0b;
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.avatar {
+  width: 100px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.3);
+  outline: 1px solid #fff;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.info {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  gap: 20px;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info h2,
+.info p {
+  text-align: center;
+  color: #fff;
+}
+.info h2 {
+  margin-top: 1rem;
+}
+.info p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.follow-info {
+  display: flex;
+  column-gap: 1.5rem;
+}
+.single {
+  color: #fff;
+}
+.single span:first-of-type {
+  font-weight: 600;
+}
+.single span:last-of-type {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #006eff;
+  margin-top: 1rem;
+  position: relative;
+}
+.card a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #006eff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 200ms ease-in-out transform;
+}
+.card a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.repos {
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+}
+.card h2 {
+  color: #fff;
+  text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* for Light mode */
+
+.light-mode {
+  background-color: #f9f9f9;
+  color: black;
+}
+
+.light-mode * {
+  background-color: transparent;
+  color: black;
+}
+
+.light-mode h2,
+.light-mode .info h2,
+.light-mode .card h2 {
+  color: black !important;
+}
+
+.light-mode .search-form input,
+.light-mode .search-form button,
+.light-mode .card {
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.light-mode .search-form button:hover {
+  background-color: #e0e0e0;
+}
+
+.light-mode .avatar {
+  outline: 1px solid black;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.light-mode .info p,
+.light-mode .single span:last-of-type {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.light-mode .card a {
+  color: #006eff;
+}
+
+.light-mode .card a::before {
+  background-color: #006eff;
+}
+
+/* Theme Switcher Icon */
+#themeSwitcher {
+  font-size: 35px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#themeSwitcher:hover {
+  cursor: pointer;
+  transform: rotate(30deg);
+}
